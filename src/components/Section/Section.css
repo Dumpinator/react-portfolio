@@ -1,0 +1,12 @@
+.section {
+  background-color: red;
+  /*background-position: center;*/
+  /*filter: drop-shadow(0 0 0.75rem #1F253E);*/
+  box-shadow: 0 5px 10px rgba(25, 25, 25, 0.2);
+  text-align: left;
+}
+
+.display-box {
+    padding: 20px 20px;
+}
+

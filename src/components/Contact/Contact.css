@@ -1,0 +1,37 @@
+.contact-p {
+    color: #E3E3E3;
+    text-align: center;
+    font-weight: 900;
+    margin: 10px 10px 30px 10px;
+}
+
+.contact ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.contact li {
+    margin: 10px;
+}
+
+.contact-icon svg {
+    text-decoration: none;
+    margin: 10px;
+    height: 60px;
+    width: 60px;
+}
+
+.github-icon {
+    color: #505c91;
+}
+.cv-icon {
+    color: #69b241;
+}
+.linkedin-icon {
+    color: #0476b3;
+}
+

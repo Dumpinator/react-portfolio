@@ -1,0 +1,264 @@
+.about {
+    background-position: 50% 75%;
+    background-size: cover;
+    height: 600px;
+}
+.load {
+	 color: #b8e986;
+}
+ .content-name {
+	 display: flex;
+	 flex-direction: column;
+	 color: white;
+}
+ .content-name h1, .content-name h3 {
+	 font-family: sans-serif;
+	 margin: 10px 0 0 20px;
+}
+ .content-name .about-des p {
+	 color: #fff;
+	 font-size: 1.2em;
+	 text-align: center;
+	 align-self: center;
+	 margin: 20px;
+}
+ .p-ipssi {
+	 background-color: #858aa0;
+	 padding: 10px;
+}
+ .p-ipssi p {
+	 line-height: 1.75;
+	 text-align: center;
+	 color: #fff;
+}
+ .ipssi {
+	 margin-left: 2px;
+	 padding: 3px 10px;
+	 font-family: 'futurama', sans-serif;
+	 font-weight: bold;
+	 border-radius: 15px;
+	 -webkit-transition: color 0.2s;
+	 text-decoration: none;
+	 background-color: #007cc1;
+	 color: #fffcda;
+}
+ .ipssi:hover {
+	 background-color: #fff;
+	 color: #007cc1;
+}
+ .about_tag {
+	padding: 3px 10px;
+	font-family: 'Roboto', sans-serif;
+	background-color: #0a1028;
+	text-decoration: none;
+	border-radius: 15px;
+	-webkit-transition: color 0.2s;
+	margin-right: 5px;
+}
+
+ .about_tag a {
+	text-decoration: none;
+	vertical-align: middle;
+	padding-left: 10px;
+}
+
+.position_tag {
+	display: flex;
+	align-items: center;
+}
+
+ .about_tag:hover a, .about_tag:hover svg {
+	 color: #e3e3e3;
+}
+ .about_tag:hover.tag-html {
+	 background-color: #ff8c4e;
+}
+ .about_tag:hover.tag-css {
+	 background-color: #3899d4;
+}
+ .about_tag:hover.tag-js {
+	 background-color: #ffde56;
+}
+ .about_tag:hover.tag-bootstrap {
+	 background-color: #563d7c;
+}
+ .about_tag:hover.tag-sass {
+	 background-color: #cb689a;
+}
+ .about_tag:hover.tag-compass {
+	 background-color: #fc272b;
+}
+ .about_tag:hover.tag-gulp {
+	 background-color: #d04546;
+}
+ .about_tag:hover.tag-vanilla {
+	 background-color: #f29123;
+}
+ .about_tag:hover.tag-meteor {
+	 background-color: #e04e4b;
+}
+ .about_tag:hover.tag-mongodb {
+	 background-color: #69b241;
+}
+ .about_tag:hover.tag-mysql {
+	 background-color: #f29123;
+}
+ .skill {
+	 background-color: #1f253e;
+	 display: flex;
+	 flex-direction: row;
+	 flex-wrap: wrap;
+	 justify-content: space-around;
+	 border-radius: 0 0 15px 15px;
+}
+ .skill .skill-lang, .skill .skill-lib, .skill .skill-learn {
+	 display: flex;
+	 align-items: center;
+	 margin: 20px;
+	 max-width: 300px;
+}
+ .skill .flex-container {
+	 padding: 0;
+	 margin: 0;
+	 display: flex;
+	 flex-wrap: wrap;
+	 flex-direction: column;
+}
+ .skill .flex-item {
+	 padding: 5px;
+	 display: flex;
+	 flex-wrap: wrap;
+	 align-items: center;
+	 justify-content: space-between;
+}
+ .skill .flex-item p {
+	 padding-right: 15px;
+}
+ .skill .flex-container-2 {
+	 padding: 0;
+	 margin: 0;
+	 display: flex;
+	 flex-wrap: wrap;
+	 flex-direction: row;
+	 justify-content: center;
+}
+ .skill .skill-learn .learn-icon {
+	 display: flex;
+	 flex-direction: row;
+	 justify-content: center;
+}
+ .skill .skill-learn .learn-icon img {
+	 width: 60px;
+}
+ .skill .skill-learn ul {
+	 margin: 0;
+	 padding: 0;
+	 display: flex;
+	 flex-direction: row;
+	 list-style-type: none;
+}
+ .skill .skill-learn li {
+	 margin: 10px;
+}
+ .skill .skill-learn a {
+	 color: inherit;
+	 text-decoration: none;
+	 text-align: center;
+}
+ .skill .skill-learn .sololearn-icon {
+	 color: #1abc9c;
+}
+ .skill .skill-learn .codecademy-icon {
+	 color: #f65a5b;
+}
+ .skill .skill-learn .codewars-icon {
+	 color: #912c22;
+}
+ .prog-html progress {
+	 -moz-appearance: none;
+	 -webkit-appearance: none;
+	 padding: 3px;
+	 background: #0a1028;
+	 border-radius: 15px;
+	 border-style: none;
+	 box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.1);
+}
+ .prog-html progress::-webkit-progress-bar {
+	 background: #0a1028;
+	 border-radius: 15px;
+}
+ .prog-html progress::-webkit-progress-value {
+	 border-radius: 15px;
+	 padding: 2px;
+	 background: #ff8c4e;
+}
+ .prog-html progress::-moz-progress-bar {
+	 background: #ff8c4e;
+	 border-radius: 15px;
+}
+ .prog-css progress {
+	 -moz-appearance: none;
+	 -webkit-appearance: none;
+	 padding: 3px;
+	 background: #0a1028;
+	 border-radius: 15px;
+	 border-style: none;
+	 box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.1);
+}
+ .prog-css progress::-webkit-progress-bar {
+	 background: #0a1028;
+	 border-radius: 15px;
+}
+ .prog-css progress::-webkit-progress-value {
+	 border-radius: 15px;
+	 padding: 2px;
+	 background: #3899d4;
+}
+ .prog-css progress::-moz-progress-bar {
+	 background: #3899d4;
+	 border-radius: 15px;
+}
+ .prog-js progress {
+	 -moz-appearance: none;
+	 -webkit-appearance: none;
+	 padding: 3px;
+	 background: #0a1028;
+	 border-radius: 15px;
+	 border-style: none;
+	 box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.1);
+}
+ .prog-js progress::-webkit-progress-bar {
+	 background: #0a1028;
+	 border-radius: 15px;
+}
+ .prog-js progress::-webkit-progress-value {
+	 border-radius: 15px;
+	 padding: 2px;
+	 background: #ffde56;
+}
+ .prog-js progress::-moz-progress-bar {
+	 background: #ffde56;
+	 border-radius: 15px;
+}
+ .prog-php progress {
+	 -moz-appearance: none;
+	 -webkit-appearance: none;
+	 padding: 3px;
+	 background: #0a1028;
+	 border-radius: 15px;
+	 border-style: none;
+	 box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.1);
+}
+ .prog-php progress::-webkit-progress-bar {
+	 background: #0a1028;
+	 border-radius: 15px;
+}
+ .prog-php progress::-webkit-progress-value {
+	 border-radius: 15px;
+	 padding: 2px;
+	 background: #505c91;
+}
+ .prog-php progress::-moz-progress-bar {
+	 background: #505c91;
+	 border-radius: 15px;
+}

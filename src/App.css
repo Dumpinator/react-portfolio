@@ -1,38 +1,48 @@
+:root {
+  --main-bg-color: #1f253e;
+  --secondary-bg-color: #2C324F;
+
+  --main-color: #e3e3e3;
+  --secondary-color: #858aa0;
+}
+.tag-html {
+  color: #ff8c4e;
+}
+.tag-css {
+  color: #3899d4;
+}
+.tag-js {
+  color: #ffde56;
+}
+.tag-php {
+  color: #505c91;
+}
+
+.tag-bootstrap {
+  color: #563d7c;
+}
+.tag-sass {
+  color: #cb689a;
+}
+.tag-compass {
+  color: #fc272b;
+}
+.tag-vanilla {
+  color: #e6d9a7;
+}
+.tag-oclock {
+  color: #22c2a7;
+}
+.tag-meteor {
+  color: #E04E4B;
+}
+.tag-mongodb {
+  color: #69b241;
+}
+.tag-mysql {
+  color: #f29123;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
