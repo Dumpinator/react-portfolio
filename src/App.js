@@ -11,15 +11,16 @@ import Footer from './components/Footer/Footer';
 
 
 const projectSection = [
-  'Here are a few projects',
-  'Search for categories',
-  'Search for brands'
+  'Projects',
+  'Learning',
+  'New technology',
+  'Testing'
 ];
 const aboutSection = [
   'Faisons un peu connaissance',
 ];
 const contactSection = [
-  'La liste des liens ou me contacter',
+  'Say me just Hello',
 ];
 
 function App() {
@@ -61,6 +62,57 @@ function App() {
     },
     {
       id: 3,
+      show: false,
+      date: "2019",
+      name: "Twitter Clone",
+      title: "CRUD Database",
+      generateTag: {
+        name: ["MeteorJS", "BlazeJS", "Bootstrap", "Heroku"],
+        link: ["https://www.meteor.com/", "http://blazejs.org/", "https://getbootstrap.com", "https://docs.mongodb.com/", "https://dashboard.heroku.com/"],
+        cssColor: ["meteor", "blazejs", "bootstrap", "mongodb", "heroku"]
+      },
+      titleDescription: "Manipulation de data depuis une URL",
+      paraDescription: "- Récupération de données depuis une URL avec la méthode fetch - injection de ces données dans le DOM avec une template string - Mise en place d'un filtre par espèces : [ Human, Droid, Other et All ]",
+      linkLanguage: ["HTML", "CSS", "JS"],
+      linkDescription: ["https://github.com/Dumpinator/StarWarsAcademy", "https://dumpinator.github.io/StarWarsAcademy/"],
+      image: "images/p3.jpg"
+    },
+    {
+      id: 4,
+      show: false,
+      date: "2020",
+      name: "Todo List",
+      title: "DOM Vanilla JS",
+      generateTag: {
+        name: ["VanillaJS"],
+        link: ["http://vanilla-js.com/"],
+        cssColor: ["js"]
+      },
+      titleDescription: "Manipulation de data depuis une URL",
+      paraDescription: "- Récupération de données depuis une URL avec la méthode fetch - injection de ces données dans le DOM avec une template string - Mise en place d'un filtre par espèces : [ Human, Droid, Other et All ]",
+      linkLanguage: ["HTML", "CSS", "JS"],
+      linkDescription: ["https://github.com/Dumpinator/StarWarsAcademy", "https://dumpinator.github.io/StarWarsAcademy/"],
+      image: "images/p4.jpg"
+    },
+    {
+      id: 5,
+      show: false,
+      date: "2019",
+      name: "Runtours",
+      title: "NodeJS Masterclass",
+      generateTag: {
+        name: ["NodeJS", "PUG","MongoDB", "Heroku"],
+        link: ["https://nodejs.org/en/", "https://pugjs.org/api/getting-started.html", "https://docs.mongodb.com/", "https://dashboard.heroku.com/"],
+        cssColor: ["node", "pug", "bootstrap", "mongodb", "heroku"]
+      },
+      titleDescription: "Manipulation de data depuis une URL",
+      paraDescription: "- Récupération de données depuis une URL avec la méthode fetch - injection de ces données dans le DOM avec une template string - Mise en place d'un filtre par espèces : [ Human, Droid, Other et All ]",
+      linkLanguage: ["HTML", "CSS", "JS"],
+      linkDescription: ["https://github.com/Dumpinator", "https://runtours.herokuapp.com/"],
+      image: "images/p5.jpg"
+    },
+    {
+      id: 6,
       show: false,
       date: "2019",
       name: "Twitter Clone",

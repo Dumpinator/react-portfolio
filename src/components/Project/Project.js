@@ -16,8 +16,12 @@ const Project = ( props ) => {
                     <GeneratorLi data={ props.data.linkLanguage } />
                 </div>
                 <div className="link">
-                    <a target="_blank" rel="noopener noreferrer" href={ props.data.linkDescription[props.dataLength] }><FaGithub className="icons" /></a>
-                    <a target="_blank" rel="noopener noreferrer" href={ props.data.linkDescription[props.dataLength] }><FaArrowCircleUp className="icons rotate90" /></a>
+                    <div className="show-link">
+                        <a target="_blank" rel="noopener noreferrer" href={ props.data.linkDescription[props.dataLength] }><FaGithub className="icons" /></a>
+                    </div>
+                    <div className="show-link">
+                        <a target="_blank" rel="noopener noreferrer" href={ props.data.linkDescription[props.dataLength] }><FaArrowCircleUp className="icons rotate90" /></a>
+                    </div>
                 </div>
             </div>
         )
