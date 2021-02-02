@@ -1,5 +1,6 @@
 
 .container {
+	margin: auto auto;
     background-color: var(--secondary-bg-color);
 	padding: 4rem 2rem;
 }
@@ -8,7 +9,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-column-gap: 20px;
-    grid-auto-flow: row dense;
+	grid-auto-flow: row dense;
 }
 
 @media screen and (min-width: 364px) {
@@ -26,14 +27,5 @@
 	}
 	.project_description {
 		grid-column: span 3;
-	}
-}
-
-@media screen and (min-width: 1040px) {
-	.portfolio {
-		grid-template-columns: repeat(4, 1fr);
-	}
-	.project_description {
-		grid-column: span 4;
 	}
 }

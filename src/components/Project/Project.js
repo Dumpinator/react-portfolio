@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaGithub, FaArrowCircleUp } from 'react-icons/fa';
-import '../Project/Project.css';
-import GeneratorLi from './GeneratorLi/GenetatorLi';
+import './Project.css';
+import TagGenerator from './GeneratorLi/GenetatorLi';
 
 const Project = ( props ) => {
     //console.log('Project', props)
@@ -13,7 +13,7 @@ const Project = ( props ) => {
                 <h3>{ props.data.titleDescription }</h3>
                 <p>{ props.data.paraDescription }</p>
                 <div className="project_tag">
-                    <GeneratorLi data={ props.data.linkLanguage } />
+                    <TagGenerator data={ props.data.linkLanguage } />
                 </div>
                 <div className="link">
                     <div className="show-link">
@@ -35,7 +35,7 @@ const Project = ( props ) => {
                 <h2 className="project_name">{ props.data.name }</h2>
                 <div className="project_title">{ props.data.title }</div>
                 <div className="project_tag">
-                    <GeneratorLi data={ props.data.generateTag } />
+                    <TagGenerator data={ props.data.generateTag } />
                 </div>
             </div>
             { props.data.show ? projectDescriptionDiv(props) : null }

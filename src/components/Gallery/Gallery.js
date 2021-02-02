@@ -1,16 +1,15 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import './Gallery.css';
-import uniqid from 'uniqid';
 import Project from '../Project/Project';
 
 const Gallery = (props) => {
-    //console.log('Gallery', props);
 
     const projects = props.data.map((item, i) => (
         <Project
             data={ item }
             dataLength={ i }
-            key={ uniqid() }
+            key={ uuidv4() }
             onToggleClick={ props.onToggleClick }
         />
     ));

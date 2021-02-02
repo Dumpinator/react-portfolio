@@ -1,7 +1,8 @@
 {
-  "name": "portfolio2020",
+  "name": "react-portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dumpinator.github.io/react-portfolio",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -11,9 +12,10 @@
     "react-icons": "^3.10.0",
     "react-scripts": "3.4.1",
     "react-typed": "^1.2.0",
-    "uniqid": "^5.2.0"
+    "uuid": "^8.3.2"
   },
   "scripts": {
+    "deploy": "npm run build&&gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -33,5 +35,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/Dumpinator/react-portfolio.git",
+  "author": "Jonathan de BOISVILLIERS <jdeboisvilliers@gmail.com>",
+  "license": "MIT"
 }
