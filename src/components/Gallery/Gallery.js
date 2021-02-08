@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import './Gallery.css';
-import Project from '../Project/Project';
+import Cards from '../Cards/Cards';
 
 const Gallery = (props) => {
 
+    let galleryConatinerRef = useRef(null)
+
+    useEffect(() => {
+        console.log('test ', galleryConatinerRef.current.clientHeight);
+        return () => {};
+    }, []);
+
+    
     const projects = props.data.map((item, i) => (
-        <Project
+        <Cards
             data={ item }
             dataLength={ i }
             key={ uuidv4() }
@@ -16,7 +24,7 @@ const Gallery = (props) => {
 
     return (
         <div className="container">
-            <div className="portfolio" id="js-portfolio">
+            <div className="portfolio" id="js-portfolio" ref={ galleryConatinerRef }>
                 { projects }
             </div>
         </div>

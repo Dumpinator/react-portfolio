@@ -41,7 +41,7 @@ function App() {
       paraDescription: "Site internet réaliser pour le lancement du MVP pour le concept d'application de Becoast, un One Page responsive et efficace qui permettait d'avoir un CTA pour une carte météo dynamique.",
       linkLanguage: ["HTML", "CSS", "JS"],
       linkDescription: ["https://github.com/Dumpinator", "https://becoast.fr"],
-      image: "images/p1.jpg"
+      image: "/img/p1.jpg"
     },
     {
       id: 2,
@@ -58,7 +58,7 @@ function App() {
       paraDescription: "- Récupération de données depuis une URL avec la méthode fetch - injection de ces données dans le DOM avec une template string - Mise en place d'un filtre par espèces : [ Human, Droid, Other et All ]",
       linkLanguage: ["HTML", "CSS", "JS"],
       linkDescription: ["https://github.com/Dumpinator/StarWarsAcademy", "https://dumpinator.github.io/StarWarsAcademy/"],
-      image: "images/p2.jpg"
+      image: "/img/p2.jpg"
     },
     {
       id: 3,
@@ -75,7 +75,7 @@ function App() {
       paraDescription: "- Récupération de données depuis une URL avec la méthode fetch - injection de ces données dans le DOM avec une template string - Mise en place d'un filtre par espèces : [ Human, Droid, Other et All ]",
       linkLanguage: ["HTML", "CSS", "JS"],
       linkDescription: ["https://github.com/Dumpinator/StarWarsAcademy", "https://dumpinator.github.io/StarWarsAcademy/"],
-      image: "images/p3.jpg"
+      image: "/img/p3.jpg"
     },
     {
       id: 4,
@@ -92,14 +92,14 @@ function App() {
       paraDescription: "- Récupération de données depuis une URL avec la méthode fetch - injection de ces données dans le DOM avec une template string - Mise en place d'un filtre par espèces : [ Human, Droid, Other et All ]",
       linkLanguage: ["HTML", "CSS", "JS"],
       linkDescription: ["https://github.com/Dumpinator/StarWarsAcademy", "https://dumpinator.github.io/StarWarsAcademy/"],
-      image: "images/p4.jpg"
+      image: "/img/p4.jpg"
     },
     {
       id: 5,
       show: false,
-      date: "2019",
+      date: "2020",
       name: "Runtours",
-      title: "NodeJS Masterclass",
+      title: "Node Masterclass",
       generateTag: {
         name: ["NodeJS", "PUG","MongoDB", "Heroku"],
         link: ["https://nodejs.org/en/", "https://pugjs.org/api/getting-started.html", "https://docs.mongodb.com/", "https://dashboard.heroku.com/"],
@@ -109,7 +109,7 @@ function App() {
       paraDescription: "- Récupération de données depuis une URL avec la méthode fetch - injection de ces données dans le DOM avec une template string - Mise en place d'un filtre par espèces : [ Human, Droid, Other et All ]",
       linkLanguage: ["HTML", "CSS", "JS"],
       linkDescription: ["https://github.com/Dumpinator", "https://runtours.herokuapp.com/"],
-      image: "images/p5.jpg"
+      image: "/img/p5.jpg"
     },
     {
       id: 6,
@@ -126,7 +126,7 @@ function App() {
       paraDescription: "- Récupération de données depuis une URL avec la méthode fetch - injection de ces données dans le DOM avec une template string - Mise en place d'un filtre par espèces : [ Human, Droid, Other et All ]",
       linkLanguage: ["HTML", "CSS", "JS"],
       linkDescription: ["https://github.com/Dumpinator/StarWarsAcademy", "https://dumpinator.github.io/StarWarsAcademy/"],
-      image: "images/p3.jpg"
+      image: "/img/p1.jpg"
     },
   ]);
 

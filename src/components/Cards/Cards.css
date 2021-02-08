@@ -1,4 +1,11 @@
+
+.project_container {
+	perspective: 500px;
+	background-color: #3899d4;
+	margin-bottom: 3rem;
+}
 .projects {
+	transform-style: preserve-3d;
 	color: var(--main-color);
 	cursor: pointer;
 	border-radius: 0 0 15px 15px;
@@ -158,9 +165,6 @@ h4 {
 	border-radius: 5px;
 	text-decoration: none;
 	-webkit-transition: color 0.2s;
-	-webkit-box-shadow: 0px 10px 20px 1px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 10px 20px 1px rgba(0,0,0,0.75);
-	box-shadow: 0px 10px 20px 1px rgba(0,0,0,0.75);
 }
 .project_description .tag:hover {
 	color: #e3e3e3;
@@ -192,9 +196,9 @@ h4 {
 	padding: 1em;
 	background-color: #1f253e;
 	border-radius: 15px;
-	-webkit-box-shadow: 0px 10px 20px 1px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 10px 20px 1px rgba(0,0,0,0.75);
-	box-shadow: 0px 10px 20px 1px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0px 10px 20px 1px rgba(30,144,255,0.75);
+	-moz-box-shadow: 0px 10px 20px 1px  rgba(30,144,255,0.75);
+	box-shadow: 0px 10px 20px 1px  rgba(30,144,255,0.75);
 }
  .project_description h3 {
 	color: #e3e3e3;
