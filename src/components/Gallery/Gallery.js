@@ -8,7 +8,6 @@ const Gallery = (props) => {
     let galleryConatinerRef = useRef(null)
 
     useEffect(() => {
-        console.log('test ', galleryConatinerRef.current.clientHeight);
         return () => {};
     }, []);
 
@@ -16,7 +15,7 @@ const Gallery = (props) => {
     const projects = props.data.map((item, i) => (
         <Cards
             data={ item }
-            dataLength={ i }
+            dataLength={ i+1 }
             key={ uuidv4() }
             onToggleClick={ props.onToggleClick }
         />

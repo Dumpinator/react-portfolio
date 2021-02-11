@@ -1,11 +1,12 @@
 
 .project_container {
 	perspective: 500px;
-	background-color: #3899d4;
 	margin-bottom: 3rem;
 }
 .projects {
 	transform-style: preserve-3d;
+	/* transition: all 0.2s ease-in-out; */
+
 	color: var(--main-color);
 	cursor: pointer;
 	border-radius: 0 0 15px 15px;
@@ -41,7 +42,7 @@ h4 {
 	margin: 0;
 	overflow: hidden;
 	list-style: none;
-	padding: 0;
+	padding: 5px;
 }
  .projects .project_tag li {
 	float: left;

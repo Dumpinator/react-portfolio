@@ -4,52 +4,49 @@ import './Cards.css';
 import TagGenerator from './GeneratorLi/GenetatorLi';
 
 const Project = ( props ) => {
-    //console.log('Project', props)
+    const { dataLength } = props
+    
     let projectRef = useRef(null)
-    let projectContainerRef = useRef(null)
+    let containerRef = useRef(null)
     
     const handleMouseMove = (event) => {
-        //event.stopPropagation();
-        let zoneX = window.innerWidth / 3 // calculer le nbr de colonnes
-        let zoneY = projectContainerRef.current.parentElement.clientHeight / 2 // calculer le nbr de lignes
-        let xAxis = ( (window.innerWidth / 2) - event.pageX) / 10
-        let yAxis = ( (window.innerHeight / 2) - event.pageY) / 10
+        //event.stopPropagation()
 
-        console.log(event.pageY)
-         
-        if (event.pageX <= zoneX) {
-            console.log("ZONE 1")
-            projectRef.current.style.transform = `
-                rotateY(${xAxis-(zoneX/10)}deg)
-                rotateX(${ event.pageY > zoneY ? yAxis+(zoneY/10) : yAxis }deg)
-            `
-        }
+        // Project Container
+        const offsetContainerX = containerRef.current.offsetLeft
+        const offsetContainerY = containerRef.current.offsetTop
+        const sizeContainerX = containerRef.current.clientWidth
+        const sizeContainerY = containerRef.current.clientHeight
 
-        if (event.pageX >= zoneX && event.pageX <= zoneX*2) {
-            console.log("ZONE 2")
-            projectRef.current.style.transform = `
-                rotateY(${xAxis}deg)
-                rotateX(${ event.pageY > zoneY ? yAxis+(zoneY/10) : yAxis }deg)
-            `
-        }
+        // Project
+        /*
+        const offsetProjectX = projectRef.current.offsetLeft
+        const offsetProjectY = projectRef.current.offsetTop
+        const sizeProjectX = projectRef.current.clientWidth
+        const sizeProjectY = projectRef.current.clientHeight
+        */
+       
+        let xAxis = ( ( ( sizeContainerX / 2 ) - ( event.pageX - offsetContainerX ) ) / 10 )
+        let yAxis = ( ( ( sizeContainerY / 2 ) - ( event.pageY - offsetContainerY ) ) / 10 )
+        
+        if ((event.pageX > offsetContainerX && event.pageX < sizeContainerX+offsetContainerX) 
+        && (event.pageY > offsetContainerY && event.pageY < sizeContainerY+offsetContainerY )) {
 
-        if (event.pageX >= zoneX*2) {
-            console.log("ZONE 3")
             projectRef.current.style.transform = `
-                rotateY(${xAxis+(zoneX/10)}deg)
-                rotateX(${ event.pageY > zoneY ? yAxis+(zoneY/10) : yAxis }deg)
-            `
+                    rotateY(${xAxis}deg)
+                    rotateX(${yAxis}deg)
+                `
         }
-    };
-/*
+    }
+
     React.useEffect(() => {
-        //window.addEventListener('mouse', handleMouseOver);
+        console.log('Project', dataLength)
         // cleanup this component
         return () => {
         //window.removeEventListener('keydown', handleMouseOver);
         };
-    }, []);
-*/
+    }, [dataLength]);
+
     const projectDescriptionDiv = (props) => {
         //console.log(props.data.show)
         // return descripton first
@@ -75,7 +72,7 @@ const Project = ( props ) => {
     return (
         <>
             <div className="project_container"
-                ref={ projectContainerRef }
+                ref={ containerRef }
                 onMouseMove={ (e) => handleMouseMove(e) }
                 onMouseOut={ () => projectRef.current.style.transform = `rotateY(${0}deg) rotateX(${0}deg)` }
             >
