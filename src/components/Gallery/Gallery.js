@@ -1,33 +1,22 @@
-import React, { useRef, useEffect } from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import './Gallery.css';
-import Cards from '../Cards/Cards';
+import React from 'react'
+import './Gallery.css'
+import Cards from '../Cards/Cards'
 
-const Gallery = (props) => {
-
-    let galleryConatinerRef = useRef(null)
-
-    useEffect(() => {
-        return () => {};
-    }, []);
-
-    
-    const projects = props.data.map((item, i) => (
-        <Cards
-            data={ item }
-            dataLength={ i+1 }
-            key={ uuidv4() }
-            onToggleClick={ props.onToggleClick }
-        />
-    ));
+const Gallery = ({ data, onToggleClick }) => {
 
     return (
         <div className="container">
-            <div className="portfolio" id="js-portfolio" ref={ galleryConatinerRef }>
-                { projects }
+            <div className="portfolio" id="js-portfolio">
+                { data && data.map((item, i) => (
+                <Cards
+                    key={ item.id }
+                    data={ item }
+                    dataLength={ i+1 }
+                    onToggleClick={ onToggleClick } />
+                ))}
             </div>
         </div>
     )
 }
 
-export default Gallery;
+export default Gallery

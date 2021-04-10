@@ -1,0 +1,30 @@
+.project_tag ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project_tag ul > li {
+    margin: 0.1rem;
+    transition: transform 0.1s ease-in-out;
+}
+.project_tag ul > li:hover {
+    transform: scale(1.5);
+}
+
+.project_tag ul li:hover a {
+    color: aqua;
+}
+
+.project_tag .tag {
+	padding: 4px 4px 3px 4px;
+	font-size: 0.7em;
+	font-family: 'Roboto', sans-serif;
+	background-color: #0a1028;
+	border-radius: 5px;
+	text-decoration: none;
+	-webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}

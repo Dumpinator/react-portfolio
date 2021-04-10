@@ -5,41 +5,41 @@
   --main-color: #e3e3e3;
   --secondary-color: #858aa0;
 }
-.tag-html {
+.color-html {
   color: #ff8c4e;
 }
-.tag-css {
+.color-css {
   color: #3899d4;
 }
-.tag-js {
+.color-js {
   color: #ffde56;
 }
-.tag-php {
+.color-php {
   color: #505c91;
 }
 
-.tag-bootstrap {
+.color-bootstrap {
   color: #563d7c;
 }
-.tag-sass {
+.color-sass {
   color: #cb689a;
 }
-.tag-compass {
+.color-compass {
   color: #fc272b;
 }
-.tag-vanilla {
+.color-vanilla {
   color: #e6d9a7;
 }
-.tag-oclock {
+.color-oclock {
   color: #22c2a7;
 }
-.tag-meteor {
+.color-meteor {
   color: #E04E4B;
 }
-.tag-mongodb {
+.color-mongodb {
   color: #69b241;
 }
-.tag-mysql {
+.color-mysql {
   color: #f29123;
 }
 

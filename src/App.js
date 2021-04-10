@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
-import './App.css';
-import NavBar from './components/NavBar/NavBar';
-import Section from './components/Section/Section';
-import Gallery from './components/Gallery/Gallery';
-import About from './components/About/About';
-import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
-
-
-
+import React, { useState, useCallback } from 'react'
+import './App.css'
+import NavBar from './components/NavBar/NavBar'
+import Section from './components/Section/Section'
+import Gallery from './components/Gallery/Gallery'
+import About from './components/About/About'
+import Contact from './components/Contact/Contact'
+import Footer from './components/Footer/Footer'
 
 const projectSection = [
   'Projects',
@@ -39,7 +36,7 @@ function App() {
       },
       titleDescription: "Landing Page pour Becoast",
       paraDescription: "Site internet réaliser pour le lancement du MVP pour le concept d'application de Becoast, un One Page responsive et efficace qui permettait d'avoir un CTA pour une carte météo dynamique.",
-      linkLanguage: ["HTML", "CSS", "JS"],
+      linkLanguage: ["HTML", "CSS", "JS", "PHP"],
       linkDescription: ["https://github.com/Dumpinator", "https://becoast.fr"],
       image: "/img/p1.jpg"
     },
@@ -128,18 +125,17 @@ function App() {
       linkDescription: ["https://github.com/Dumpinator/StarWarsAcademy", "https://dumpinator.github.io/StarWarsAcademy/"],
       image: "/img/p1.jpg"
     },
-  ]);
+  ])
 
-  const onToggleClick = (e, id) => {
-    e.preventDefault();
+  const onToggleClick = useCallback( id => {
     setProjects(
-      projects.map((project) => {
+      projects.map( project => {
         if (project.id === id) { project.show = !project.show }
-        else project.show = false;
-        return project;
+        else project.show = false
+        return project
       })
-    );
-  };
+    )
+  }, [projects])
 
   return (
     <div className="App">
@@ -152,7 +148,7 @@ function App() {
       <Contact />
       <Footer/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

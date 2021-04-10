@@ -1,97 +1,155 @@
-import React, { useRef } from 'react';
-import { FaGithub, FaArrowCircleUp } from 'react-icons/fa';
-import './Cards.css';
-import TagGenerator from './GeneratorLi/GenetatorLi';
+import React, { useRef, useEffect, useState } from 'react'
+import { FaGithub, FaArrowCircleUp } from 'react-icons/fa'
+import { motion, AnimatePresence } from "framer-motion"
+import TagGenerator from './GeneratorLi/GenetatorLi'
+import Tags from './Tags'
+import './Cards.css'
 
-const Project = ( props ) => {
-    const { dataLength } = props
+const Project = ({ data, dataLength, onToggleClick }) => {
     
-    let projectRef = useRef(null)
-    let containerRef = useRef(null)
+    const containerRef = useRef(null)
+    const projectRef = useRef(null)
+    const imgRef = useRef(null)
+    const titleRef = useRef(null)
+    const tagsRef = useRef(null)
+    const nodeRef = useRef(null)
     
+    const [test, setTest] = useState(false)
+
+    useEffect(() => {
+        data.show ? setTest(true) : setTest(false)
+       return () => setTest(false)
+        }, [data.show])
+
     const handleMouseMove = (event) => {
-        //event.stopPropagation()
-
         // Project Container
         const offsetContainerX = containerRef.current.offsetLeft
         const offsetContainerY = containerRef.current.offsetTop
         const sizeContainerX = containerRef.current.clientWidth
         const sizeContainerY = containerRef.current.clientHeight
 
-        // Project
-        /*
-        const offsetProjectX = projectRef.current.offsetLeft
-        const offsetProjectY = projectRef.current.offsetTop
-        const sizeProjectX = projectRef.current.clientWidth
-        const sizeProjectY = projectRef.current.clientHeight
-        */
-       
         let xAxis = ( ( ( sizeContainerX / 2 ) - ( event.pageX - offsetContainerX ) ) / 10 )
         let yAxis = ( ( ( sizeContainerY / 2 ) - ( event.pageY - offsetContainerY ) ) / 10 )
         
         if ((event.pageX > offsetContainerX && event.pageX < sizeContainerX+offsetContainerX) 
         && (event.pageY > offsetContainerY && event.pageY < sizeContainerY+offsetContainerY )) {
 
-            projectRef.current.style.transform = `
-                    rotateY(${xAxis}deg)
-                    rotateX(${yAxis}deg)
-                `
+            // project anim
+            projectRef.current.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`
+
+            imgRef.current.style.transform = `translateZ(15px)`
+            imgRef.current.style.transform = `scale(1.1)`
+            imgRef.current.style.borderRadius = `15px`
+            imgRef.current.style.boxShadow = `0px 0px 20px 1px rgba(255,255,255,0.75)`
+            
+            titleRef.current.style.transform = `translateZ(15px)`
+
+            tagsRef.current.style.transform = `translateZ(15px)`
         }
     }
 
-    React.useEffect(() => {
-        console.log('Project', dataLength)
-        // cleanup this component
-        return () => {
-        //window.removeEventListener('keydown', handleMouseOver);
-        };
-    }, [dataLength]);
+    const handleMouseLeave = () => {
+        // reset all anim
+        projectRef.current.style.transition = "all 0.5s ease"
+        projectRef.current.style.transform = `rotateY(${0}deg) rotateX(${0}deg)`
 
-    const projectDescriptionDiv = (props) => {
-        //console.log(props.data.show)
-        // return descripton first
-        return (
-            <div className="project_description js-body" >
-                <h3>{ props.data.titleDescription}</h3>
-                <p>{ props.data.paraDescription }</p>
-                <div className="project_tag">
-                    <TagGenerator data={ props.data.linkLanguage } />
-                </div>
-                <div className="link">
-                    <div className="show-link">
-                        <a target="_blank" rel="noopener noreferrer" href={ props.data.linkDescription[props.dataLength] }><FaGithub className="icons" /></a>
-                    </div>
-                    <div className="show-link">
-                        <a target="_blank" rel="noopener noreferrer" href={ props.data.linkDescription[props.dataLength] }><FaArrowCircleUp className="icons rotate90" /></a>
-                    </div>
-                </div>
-            </div>
-        )
+        imgRef.current.style.borderRadius = `0`
+        imgRef.current.style.transform = `translateZ(0)`
+        imgRef.current.style.boxShadow = `none`
+
+        titleRef.current.style.transform = `translateZ(0)`
+
+        tagsRef.current.style.transform = `translateZ(0)`
+    
+    }
+
+    const variants = {
+        
+        init: {
+            opacity: [ 0, 0, 0 ],
+            scale: [ 0, 0, 0],
+            y: ['-50vh','-50vh','-50vh'],
+        },
+        
+        in: { 
+            opacity: [ 1, 1, 1 ],
+            scale: [ 1.1, 1.1, 1.1],
+            y: ['2vh', '0vh', '2vh'],
+            transition: 
+                {   duration: 2.5,
+                    times: [0, 0.5, 1],
+                    repeat: Infinity,
+                },
+        },
+        
+        out: { 
+            opacity: [ 0, 0, 0 ],
+            scale: [ 0, 0, 0 ],
+            y: [ '-10vh', '-10vh', '-10vh' ],
+            transition: 
+                {
+                    repeat: 1,
+                },
+        }
     }
 
     return (
-        <>
+        <> 
             <div className="project_container"
                 ref={ containerRef }
-                onMouseMove={ (e) => handleMouseMove(e) }
-                onMouseOut={ () => projectRef.current.style.transform = `rotateY(${0}deg) rotateX(${0}deg)` }
+                onMouseEnter={ () => projectRef.current.style.transition = "none" }
+                onMouseMove={ e => handleMouseMove(e) }
+                onMouseLeave={ () => handleMouseLeave() }
             >
-                <div className={ (props.data.show) ? "projects js-item projectCliked" : "projects js-item"}
-                    ref={projectRef} 
-                    onClick={(e) => props.onToggleClick( e, props.data.id )}
-                    >
-                    <div className="project_img" style={{ backgroundImage: `url(${process.env.PUBLIC_URL + props.data.image})` }}></div>
-                    <h4 className="project_date">{ props.data.date }</h4>
-                    <h2 className="project_name">{ props.data.name }</h2>
-                    <div className="project_title">{ props.data.title }</div>
-                    <div className="project_tag">
-                        <TagGenerator data={ props.data.generateTag } />
+                <div className={ data.show ? "projects js-item projectSelected" : "projects js-item"}
+                    ref={ projectRef } 
+                    onClick={ () => onToggleClick( data.id )}
+                >
+                    <div ref={imgRef} className={ data.show ? "project_img imgSelected" : "project_img" } style={{ backgroundImage: `url(${process.env.PUBLIC_URL + data.image})` }}></div>
+                    <h4 className="project_date">{ data.date }</h4>
+                    <h2 ref={titleRef} className={ data.show ? "project_name titleSelected" : "project_name" }>{ data.name }</h2>
+                    <div className="project_title">{ data.title }</div>
+                    <div ref={tagsRef} className="project_tag">
+                        <Tags key={ data.id } data={ data.linkLanguage }/>
                     </div>
                 </div>
-                { props.data.show ? projectDescriptionDiv(props) : null }
             </div>
+
+            <AnimatePresence >
+                { test && (
+                    <motion.div
+                        key="description"
+                        initial="init"
+                        animate="in"
+                        exit="out"
+                        variants={ variants }
+                        ref={nodeRef} 
+                        className="project_description"
+                    >
+                        <h3>{ data.titleDescription }</h3>
+                        <p>{ data.paraDescription }</p>
+                        <div className="project_tag">
+                            <TagGenerator data={ data.linkLanguage } />
+                        </div>
+                        <div className="link">
+                            <div className="show-link">
+                                <a target="_blank" rel="noopener noreferrer"
+                                    href={ data.linkDescription[dataLength] }>
+                                    <FaGithub className="icons" />
+                                </a>
+                            </div>
+                            <div className="show-link">
+                                <a target="_blank" rel="noopener noreferrer"
+                                    href={ data.linkDescription[dataLength] }>
+                                    <FaArrowCircleUp className="icons rotate90" />
+                                </a>
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </>
     )
 }
 
-export default Project;
+export default Project
